@@ -27,6 +27,6 @@ EDI.configure do |config|
   # Default channel to post to using the post_to_slack method
   # config.default_channel = "#general"
 
-  config.attempt_keepalive = true
+  # config.attempt_keepalive = true
 end
 EDI.bootstrap
