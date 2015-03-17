@@ -28,6 +28,5 @@ EDI.configure do |config|
   # config.default_channel = "#general"
 
   # config.attempt_keepalive = true
-  config.default_location = 43240
 end
 EDI.bootstrap
