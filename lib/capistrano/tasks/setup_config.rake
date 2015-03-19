@@ -13,7 +13,7 @@ namespace :deploy do
       # set in the stage files
       config_files = fetch(:config_files)
       config_files.each do |file|
-        upload! "config/#{file}", "#{shared_path}/config"
+        upload! "config/#{file}", "/home/deployer/apps/edi/shared/config/"
       end
 
       # which of the above files should be marked as executable
@@ -26,7 +26,7 @@ namespace :deploy do
       symlinks = fetch(:symlinks)
 
       symlinks.each do |symlink|
-        sudo "ln -nfs #{shared_path}/config/#{symlink[:source]} #{sub_strings(symlink[:link])}"
+        sudo "ln -nfs #{shared_path}/config/#{symlink[:source]} #{symlink[:link]}"
       end
     end
   end
