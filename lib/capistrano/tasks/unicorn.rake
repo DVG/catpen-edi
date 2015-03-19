@@ -7,4 +7,5 @@ namespace :deploy do
       end
     end
   end
+  after :finished, :restart
 end
