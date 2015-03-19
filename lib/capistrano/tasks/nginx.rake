@@ -19,4 +19,5 @@ namespace :nginx do
       end
     end
   end
+  after 'deploy:finished', :restart
 end
