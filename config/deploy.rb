@@ -1,10 +1,8 @@
-require_relative '../env'
 lock '3.4.0'
 
 set :application, 'edi'
 set :repo_url, 'https://github.com/DVG/catpen-edi'
 set :deploy_to, "~/apps/#{fetch(:application)}"
-set :default_env, SERVER_ENV
 set :rbenv_type, :user
 set :rbenv_ruby, '2.2.0'
 set :ssh_options, { :forward_agent => true }
