@@ -10,6 +10,17 @@ def smart_template(from, to=nil)
   end
 end
 
+def template_file(name)
+  if File.exist?((file = "config/deploy/#{fetch(:stage)}/#{name}.erb"))
+    return file
+  elsif File.exist?((file = "config/deploy/shared/#{name}.erb"))
+    return file
+  elsif File.exist?(file = File.expand_path("../templates/#{name}.erb",File.dirname(__FILE__)))
+    return file
+  end
+  return nil
+end
+
 namespace :deploy do
   task :setup_config do
     on roles(:app) do
