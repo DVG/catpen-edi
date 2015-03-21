@@ -1,5 +1,5 @@
 require 'bundler/setup'
-Bundler.require(:default, ENV["RACK_ENV"].to_sym)
+Bundler.require(:default)
 EDI.configure do |config|
   config.root = File.expand_path "./"
   # Your bot's name, not required for anything, but you can use it to have your bot speak it's name
