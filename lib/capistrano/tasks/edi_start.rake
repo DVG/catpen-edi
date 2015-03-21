@@ -1,5 +1,7 @@
 desc "start edi"
 task :start_edi do
-  execute :edi, "start &"
+  on roles(:app) do
+    execute "bundle", "exec edi start &"
+  end
 end
 after "deploy:finished", :start_edi
