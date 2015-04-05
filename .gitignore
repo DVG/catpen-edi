@@ -1,3 +1,4 @@
 log/*.log
 env.rb
 variables.sh
+config/services.yml

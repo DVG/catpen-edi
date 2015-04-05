@@ -1,8 +1,8 @@
 namespace :deploy do
-  desc "Upload variables.sh"
+  desc "Upload services.yml"
   task :variables do
     on roles(:app) do
-      upload! "variables.sh", "/home/deployer/apps/edi/shared/config/"
+      upload! "config/services.yml", "/home/deployer/apps/edi/shared/config/services.yml"
     end
   end
 end
