@@ -7,3 +7,14 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.2.0'
 set :ssh_options, { :forward_agent => true }
 set :linked_dirs, %w{log}
+
+set(:config_files, %w(
+   services.yml
+))
+
+set(:symlinks, [
+  {
+    source: "services.yml",
+    link: "/home/deployer/apps/edi/current/config/services.yml"
+  }
+])

@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 ruby "2.2.0"
-gem 'edi'
+gem 'edi', path: "../edi"
 gem 'capistrano'
 gem 'capistrano-rbenv'
 gem 'capistrano-bundler'
