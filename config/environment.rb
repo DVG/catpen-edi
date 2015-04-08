@@ -26,5 +26,7 @@ EDI.configure do |config|
 
   # Default channel to post to using the post_to_slack method
   # config.default_channel = "#general"
+
+  config.log_level = :debug
 end
 EDI.bootstrap
