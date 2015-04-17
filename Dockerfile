@@ -15,3 +15,5 @@ ADD config/catpen-services.yml $APP_HOME/config/
 RUN mv config/catpen-services.yml config/services.yml
 
 ADD . $APP_HOME/
+
+CMD edi start
