@@ -2,3 +2,5 @@ log/*.log
 env.rb
 variables.sh
 config/services.yml
+config/catpen-services.yml
+config/dogfort-services.yml

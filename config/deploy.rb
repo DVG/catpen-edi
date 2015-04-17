@@ -10,11 +10,21 @@ set :linked_dirs, %w{log}
 
 set(:config_files, %w(
    services.yml
+   catpen-services.yml
+   dogfort-services.yml
 ))
 
 set(:symlinks, [
   {
     source: "services.yml",
     link: "/home/deployer/apps/edi/current/config/services.yml"
+  },
+  {
+    source: "catpen-services.yml",
+    link: "/home/deployer/apps/edi/current/config/catpen-services.yml"
+  }
+  {
+    source: "dogfort-services.yml",
+    link: "/home/deployer/apps/edi/current/config/dogfort-services.yml"
   }
 ])

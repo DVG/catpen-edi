@@ -11,7 +11,7 @@ ADD Gemfile* $APP_HOME/
 
 RUN bundle install
 
-ADD config/catpen-services.yml $APP_HOME/config/services.yml
+ADD config/dogfort-services.yml $APP_HOME/config/services.yml
 
 ADD . $APP_HOME/
 

@@ -1,20 +1,49 @@
 desc "manage edi"
 
 namespace :edi do
-  task :start do
-    on roles(:app) do
-      within current_path do
-        execute "docker", "run -d --name edi --restart always catpen-edi"
+  namespace :start do
+
+    task :catpen do
+      on roles(:app) do
+        within current_path do
+          execute "docker", "run -d --name edi --restart always catpen-edi"
+        end
       end
     end
+
+    after "docker:build:catpen", :catpen
+
+    task :dogfort do
+      on roles(:app) do
+        within current_path do
+          execute "docker", "run -d --name dogfort --restart always dogfort-edi"
+        end
+      end
+    end
+
+    after "docker:build:dogfort", :dogfort
+
   end
 
-  task :stop do
-    on roles(:app) do
-      within current_path do
-        execute "docker", "stop edi"
-        execute "docker", "rm edi"
+  namespace :stop do
+
+    task :catpen do
+      on roles(:app) do
+        within current_path do
+          execute "docker", "stop edi"
+          execute "docker", "rm edi"
+        end
       end
     end
+
+    task :dogfort do
+      on roles(:app) do
+        within current_path do
+          execute "docker", "stop dogfort"
+          execute "docker", "rm dogfort"
+        end
+      end
+    end
+
   end
 end
