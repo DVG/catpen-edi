@@ -3,7 +3,7 @@ namespace :deploy do
     on roles(:app) do
       config_files = fetch(:config_files)
       config_files.each do |file|
-        upload! "config/#{file}", "/home/deployer/apps/edi/curent/config/"
+        upload! "config/#{file}", "/home/deployer/apps/edi/current/config/"
       end
 
     end

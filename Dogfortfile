@@ -15,5 +15,3 @@ ADD config/dogfort-services.yml $APP_HOME/config/
 RUN mv config/dogfort-services.yml config/services.yml
 
 ADD . $APP_HOME/
-
-CMD edi start
