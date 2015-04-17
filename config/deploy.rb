@@ -22,7 +22,7 @@ set(:symlinks, [
   {
     source: "catpen-services.yml",
     link: "/home/deployer/apps/edi/current/config/catpen-services.yml"
-  }
+  },
   {
     source: "dogfort-services.yml",
     link: "/home/deployer/apps/edi/current/config/dogfort-services.yml"
