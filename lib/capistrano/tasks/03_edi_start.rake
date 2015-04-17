@@ -11,7 +11,7 @@ namespace :edi do
       end
     end
 
-    after "docker:build:catpen", :catpen
+    after "docker:build:dogfort", :catpen
 
     task :dogfort do
       on roles(:app) do
@@ -21,7 +21,7 @@ namespace :edi do
       end
     end
 
-    after "docker:build:dogfort", :dogfort
+    after "edi:start:catpen", :dogfort
 
   end
 

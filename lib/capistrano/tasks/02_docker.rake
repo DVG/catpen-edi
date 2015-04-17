@@ -17,7 +17,7 @@ namespace :docker do
         end
       end
     end
-    after :catpen, :dogfort
+    after "docker:build:catpen", :dogfort
 
 
   end
