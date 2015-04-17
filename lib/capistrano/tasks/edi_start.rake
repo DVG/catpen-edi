@@ -8,7 +8,6 @@ namespace :edi do
       end
     end
   end
-  after "docker:build", :start
 
   task :stop do
     on roles(:app) do
