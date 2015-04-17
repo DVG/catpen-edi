@@ -1,9 +1,21 @@
-desc "start edi"
-task :start_edi do
-  on roles(:app) do
-    within current_path do
-      execute "nohup", "bundle exec edi start &"
+desc "manage edi"
+
+namespace :edi do
+  task :start do
+    on roles(:app) do
+      within current_path do
+        execute "docker", "run -d --name edi --restart always catpen-edi"
+      end
+    end
+  end
+  after "docker:build", :start
+
+  task :stop do
+    on roles(:app) do
+      within current_path do
+        execute "docker", "stop edi"
+        execute "docker", "rm edi"
+      end
     end
   end
 end
-after "deploy:finished", :start_edi
