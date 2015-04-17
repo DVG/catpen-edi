@@ -11,6 +11,9 @@ ADD Gemfile* $APP_HOME/
 
 RUN bundle install
 
+ADD config/catpen-services.yml $APP_HOME/config/
+RUN mv config/catpen-services.yml config/services.yml
+
 ADD config/catpen-services.yml $APP_HOME/config/services.yml
 
 ADD . $APP_HOME/

@@ -11,7 +11,8 @@ ADD Gemfile* $APP_HOME/
 
 RUN bundle install
 
-ADD config/dogfort-services.yml $APP_HOME/config/services.yml
+ADD config/dogfort-services.yml $APP_HOME/config/
+RUN mv config/dogfort-services.yml config/services.yml
 
 ADD . $APP_HOME/
 
